@@ -1,5 +1,24 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark,.dark *));
 
 * {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#fafafa] text-zinc-900 dark:bg-[#0a0a0a] dark:text-white antialiased;
+}
+
+/* cegah horizontal scroll di Android */
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
