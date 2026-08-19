@@ -1,121 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col">
+      {/* Navbar */}
+      <nav className="flex justify-between items-center px-6 md:px-12 py-5 border-b border-white/10">
+        <h1 className="text-xl font-bold tracking-widest">ARSHA<span className="text-violet-500">.CODES</span></h1>
+        <div className="hidden md:flex gap-6 text-sm text-white/60">
+          <span>Home</span>
+          <span>Course</span>
+          <span>About</span>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
+        <button className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold">
+          Login
         </button>
-      </section>
+      </nav>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+      {/* Hero */}
+      <div className="flex-1 flex flex-col items-center justify-center text-center px-6">
+        <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-xs text-white/60 mb-6">
+          <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+          TAHAP 2A LIVE - Tailwind Connected
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
+          ARSHA <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">
+            E-LEARNING
+          </span>
+        </h1>
+        <p className="text-white/50 max-w-xl mb-8 text-sm md:text-base">
+          Platform e-learning modern. Dibangun di Termux, di-push dari HP, live di Netlify.
+          Sekarang sudah pakai Tailwind CSS.
+        </p>
+        <div className="flex gap-3">
+          <button className="bg-violet-600 hover:bg-violet-700 px-7 py-3 rounded-full text-sm font-semibold transition">
+            Mulai Belajar
+          </button>
+          <button className="bg-white/10 hover:bg-white/15 border border-white/10 px-7 py-3 rounded-full text-sm font-semibold transition">
+            Lihat GitHub
+          </button>
         </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+        <div className="mt-16 grid grid-cols-3 gap-8 text-center border-t border-white/10 pt-8 w-full max-w-2xl">
+          <div>
+            <h3 className="text-2xl font-bold">100%</h3>
+            <p className="text-xs text-white/40">HP Only</p>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold">Vite + React</h3>
+            <p className="text-xs text-white/40">Stack Modern</p>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold">Live</h3>
+            <p className="text-xs text-white/40">Netlify</p>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
