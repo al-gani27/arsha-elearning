@@ -24,7 +24,7 @@ export default function Register() {
       const { data, error } = await supabase.auth.signUp({ email: form.email, password: form.password })
       if (error) throw error
       if (data.user) {
-        const { error: pErr } = await supabase.from('profiles').insert({ id: data.user.id, full_name: form.fullName, email: form.email })
+        const { error: pErr } = await supabase.from('profiles').insert({ id: data.user.id, role: 'siswa', full_name: form.fullName, email: form.email })
         if (pErr) throw pErr
         if (data.session) { setSuccess('Akun berhasil dibuat! Mengarahkan...'); setTimeout(()=>navigate('/dashboard'),800) }
         else { setSuccess('Akun berhasil dibuat! Silakan cek email untuk verifikasi, lalu login.'); setTimeout(()=>navigate('/login'),1500) }
