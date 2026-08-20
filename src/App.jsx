@@ -11,33 +11,32 @@ import AdminCourses from "./pages/AdminCourses"
 import AdminDashboard from "./pages/role/AdminDashboard"
 import GuruDashboard from "./pages/role/GuruDashboard"
 import SiswaDashboard from "./pages/role/SiswaDashboard"
+import GuruClasses from "./pages/GuruClasses"
 import Unauthorized from "./pages/Unauthorized"
 import Footer from "./components/Footer"
-
-function App() {
-  return (
+function App(){
+  return(
     <AuthProvider>
       <BrowserRouter>
         <div className="min-h-screen flex flex-col">
           <div className="flex-1">
             <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/" element={<Courses />} />
-              <Route path="/courses" element={<Courses />} />
-              <Route path="/courses/:id" element={<CourseDetail />} />
-              <Route path="/unauthorized" element={<Unauthorized />} />
-
-              <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-              <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-              <Route path="/admin/courses" element={<ProtectedRoute allowedRoles={['admin']}><AdminCourses /></ProtectedRoute>} />
-
-              <Route path="/admin" element={<ProtectedRoute allowedRoles={['admin']}><AdminDashboard /></ProtectedRoute>} />
-              <Route path="/guru" element={<ProtectedRoute allowedRoles={['guru']}><GuruDashboard /></ProtectedRoute>} />
-              <Route path="/siswa" element={<ProtectedRoute allowedRoles={['siswa','guru','admin']}><SiswaDashboard /></ProtectedRoute>} />
+              <Route path="/login" element={<Login/>}/>
+              <Route path="/register" element={<Register/>}/>
+              <Route path="/" element={<Courses/>}/>
+              <Route path="/courses" element={<Courses/>}/>
+              <Route path="/courses/:id" element={<CourseDetail/>}/>
+              <Route path="/unauthorized" element={<Unauthorized/>}/>
+              <Route path="/dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>}/>
+              <Route path="/profile" element={<ProtectedRoute><Profile/></ProtectedRoute>}/>
+              <Route path="/admin/courses" element={<ProtectedRoute allowedRoles={['admin']}><AdminCourses/></ProtectedRoute>}/>
+              <Route path="/admin" element={<ProtectedRoute allowedRoles={['admin']}><AdminDashboard/></ProtectedRoute>}/>
+              <Route path="/guru" element={<ProtectedRoute allowedRoles={['guru']}><GuruDashboard/></ProtectedRoute>}/>
+              <Route path="/guru/classes" element={<ProtectedRoute allowedRoles={['guru']}><GuruClasses/></ProtectedRoute>}/>
+              <Route path="/siswa" element={<ProtectedRoute allowedRoles={['siswa','guru','admin']}><SiswaDashboard/></ProtectedRoute>}/>
             </Routes>
           </div>
-          <Footer />
+          <Footer/>
         </div>
       </BrowserRouter>
     </AuthProvider>
