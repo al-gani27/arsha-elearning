@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { supabase } from '../lib/supabaseClient'
-import { useAuth } from '../contexts/AuthContext'
+import { supabase } from '../lib/supabase'
+import { useAuth } from '../context/AuthContext'
 
 export default function GuruClasses() {
   const { user } = useAuth()
